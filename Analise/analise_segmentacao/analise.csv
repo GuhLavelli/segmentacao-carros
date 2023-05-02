@@ -1,0 +1,6 @@
+Imagem;Acertos;Acertos(%);Falso Positivo;Falso Negativo
+Carro Branco 1;104426;98,14474;14;1960
+Carro Branco 2;118401;98,6675;99;1393
+Carro Corrida;116741;97,284164;858;41
+Carro R8;117415;97,84583;244;2335
+Carro Subaru;102784;96,2397;41;1215
