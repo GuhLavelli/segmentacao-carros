@@ -1,5 +1,5 @@
 void setup() {
-  size(400, 266);
+  size(400, 300);
   //noLoop();
 }
 
