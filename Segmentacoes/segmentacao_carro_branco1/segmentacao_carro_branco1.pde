@@ -56,7 +56,7 @@ void draw() {
         (red(img2.pixels[pos]) > 55 &&  y == 188 && x > 77 && x < 150)) //Linha para o FloodFill
         img2.pixels[pos] = color(255);
       else
-      img2.pixels[pos] = color(0);
+        img2.pixels[pos] = color(0);
     }
   }
   imgCinza.setImg(imgCinza.floodFill(180, 80));
@@ -65,7 +65,7 @@ void draw() {
   imgCinza.setImg(imgCinza.floodFill(190, 275));
   imgCinza.setImg(imgCinza.floodFill(183, 321));
   imgCinza.setImg(imgCinza.floodFill(183, 367));
-  
+
   image(imgCinza.getImg(), 0, 0);
 
 
@@ -74,4 +74,22 @@ void draw() {
   //text("X: " + mouseX + " Y: " + mouseY, mouseX, mouseY);
 
   save("carro_branco1_segmentado.png");
+  
+  img = loadImage("carro_branco.jpg");
+  PImage seg = loadImage("carro_branco1_segmentado.png");
+  for (int y =0; y<height; y++) {
+    for (int x = 0; x< width; x++) {
+      int pos = y*seg.width+x;
+
+      float red = red(img.pixels[pos]);
+      float blue = blue(img.pixels[pos]);
+      float green = green(img.pixels[pos]);
+
+      if (red(seg.pixels[pos]) == 255) {
+        seg.pixels[pos] = color(red, blue, green);
+      }
+    }
+  }
+  image(seg, 0, 0);
+  save("carro_corrida_segmentado_colorido.jpg");
 }
